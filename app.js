@@ -1,21 +1,21 @@
-// Lesson 1: Standard types
-// console.log("Learning Typescript!");
-// console.log("Hello!");
-function combine(firstObj, secondObj, resultType // Literal types
-) {
-    var combResult;
-    if ((typeof firstObj === "number" && typeof secondObj === "number") ||
-        resultType === "as-number") {
-        combResult = +firstObj + +secondObj;
-    }
-    else {
-        combResult = firstObj.toString() + " " + secondObj.toString();
-    }
-    return combResult;
+// Lesson 4: Function return types, function types
+function addNumber(n1, n2) {
+    return n1 + n2;
 }
-var ageCombine = combine("25", "30", "as-number"); // const ageCombine = combine(25, 30, "as-number");
-var ageStringCombine = combine("25", "30", "as-text");
-var phraseCombine = combine("Scott", "Ravencroft", "as-text");
-console.log(ageCombine);
-console.log(ageStringCombine);
-console.log(phraseCombine);
+// Function return type
+function printResult(res) {
+    console.log("Result: " + res);
+}
+// printResult(addNumber(40, 60));
+var combineNumbers; // Function types
+combineNumbers = addNumber; // Assign to the function
+// combineNumbers = printResult;
+console.log(combineNumbers(50, 50));
+// Callback example
+function addNumberHandle(num1, num2, callback) {
+    var sum = num1 + num2;
+    callback(sum);
+}
+addNumberHandle(20, 20, function (result) {
+    console.log(result);
+});
