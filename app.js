@@ -7,6 +7,7 @@ if (typeof userInput === 'string') {
     userName = userInput;
 }
 console.log(typeof userInput);
+console.log(typeof generateError);
 console.log(userName != userInput);
 function generateError(message, code) {
     throw { message: message, errorCode: code };
